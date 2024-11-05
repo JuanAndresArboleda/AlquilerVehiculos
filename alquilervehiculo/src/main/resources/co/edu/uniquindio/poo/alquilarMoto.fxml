@@ -44,7 +44,7 @@
             <Image url="@Imagen_de_WhatsApp_2024-10-26_a_las_13.16.28_569082e0-removebg-preview.png" />
          </image>
       </ImageView>
-      <TableView id="tb_listVehiculos" fx:id="tb_motos" layoutX="79.0" layoutY="452.0" prefHeight="221.0" prefWidth="1019.0">
+      <TableView id="tb_listVehiculos" fx:id="tb_listMotos" layoutX="79.0" layoutY="452.0" prefHeight="221.0" prefWidth="1019.0">
          <columns>
             <TableColumn id="tbc_cedulaCl" fx:id="tbc_modelo" prefWidth="170.0" text="Modelo" />
             <TableColumn id="tbc_nombreCl" fx:id="tbc_marca" prefWidth="166.0" text="Marca" />
@@ -54,7 +54,7 @@
             <TableColumn fx:id="tbc_caja" prefWidth="143.0" text="Caja" />
          </columns>
       </TableView>
-      <TextField id="lbl_tiemporReserva" fx:id="txf_tiempoReserva" layoutX="82.0" layoutY="169.0" onAction="#onTiempo" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_tiemporReserva" fx:id="txf_tiempoReserva" layoutX="82.0" layoutY="169.0" prefHeight="38.0" prefWidth="409.0" />
       <Text fx:id="txt_tiempoReserva" layoutX="75.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo Reserva" textAlignment="CENTER" wrappingWidth="169.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />

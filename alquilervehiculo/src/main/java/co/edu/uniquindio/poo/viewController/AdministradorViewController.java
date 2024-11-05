@@ -9,8 +9,9 @@ import javafx.scene.text.Text;
 
 public class AdministradorViewController {
 
+    @SuppressWarnings("exports")
     @FXML
-    private TextField txf_nombre;
+    public TextField txf_nombreAd;
 
     @FXML
     private Button btn_volver;
@@ -37,19 +38,13 @@ public class AdministradorViewController {
         app.openUsuario();
     }
 
-    @FXML
-    void onNombre(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onContraseña(ActionEvent event) {
-
-    }
-
     App app;
 
     public void setApp(App app) {
         this.app = app;
+    }
+
+    public String obtenerNombre() {
+        return txf_nombreAd.getText();
     }
 }

@@ -39,7 +39,7 @@
             <Font name="Bauhaus 93" size="33.0" />
          </font>
       </Text>
-      <TableView id="tb_listClientes" fx:id="tb_listClientes" layoutX="79.0" layoutY="504.0" onSort="#onClientes" prefHeight="170.0" prefWidth="738.0">
+      <TableView id="tb_listClientes" fx:id="tb_listClientes" layoutX="79.0" layoutY="504.0" prefHeight="170.0" prefWidth="738.0">
         <columns>
           <TableColumn id="tbc_nombreCl" fx:id="tbc_nombre" prefWidth="136.0" text="Nombre" />
           <TableColumn id="tbc_cedulaCl" fx:id="tbc_cedula" prefWidth="141.0" text="Cedula" />

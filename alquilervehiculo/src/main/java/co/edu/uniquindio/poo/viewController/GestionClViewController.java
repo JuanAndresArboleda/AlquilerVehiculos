@@ -1,17 +1,23 @@
 package co.edu.uniquindio.poo.viewController;
 
+import java.util.Collection;
+
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.ClienteController;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empresa;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import co.edu.uniquindio.poo.model.Cliente;
 
 public class GestionClViewController {
 
@@ -19,7 +25,7 @@ public class GestionClViewController {
     private Button btn_actualizarCliente;
 
     @FXML
-    private TableColumn<?, ?> tbc_telefono;
+    private TableColumn<Cliente, String> tbc_telefono;
 
     @FXML
     private TextField txf_nombre;
@@ -31,7 +37,7 @@ public class GestionClViewController {
     private Button btn_eliminar;
 
     @FXML
-    private TableColumn<?, ?> tbc_nombre;
+    private TableColumn<Cliente, String> tbc_nombre;
 
     @FXML
     private TextField txf_telefono;
@@ -46,7 +52,7 @@ public class GestionClViewController {
     private Button btn_agregarCliente;
 
     @FXML
-    private TableView<?> tb_listClientes;
+    private TableView<Cliente> tb_listClientes;
 
     @FXML
     private Button btn_volder;
@@ -55,16 +61,40 @@ public class GestionClViewController {
     private Text txt_tucarro;
 
     @FXML
-    private TableColumn<?, ?> tbc_cedula;
+    private TableColumn<Cliente, String> tbc_cedula;
 
     @FXML
-    private TableColumn<?, ?> tbc_reservasId;
+    private TableColumn<Cliente, String> tbc_reservasId;
 
     @FXML
-    private TableColumn<?, ?> tbc_correo;
+    private TableColumn<Cliente, String> tbc_correo;
+
+    ObservableList<Cliente> listClientes = FXCollections.observableArrayList();
+    Cliente selectedCliente;
 
     Empresa empresa = new Empresa("tuCarro.com", 123);
-    ClienteController cc = new ClienteController(empresa);
+
+    @FXML
+    public void initialize() {
+        // Clientes de ejem
+        empresa.agregarCliente(new Cliente("usuario", 0, 0, "null"));
+        empresa.agregarCliente(new Cliente("usuario1", 1, 0, "null"));
+
+        Collection<Cliente> clientes = empresa.getClientes();
+        listClientes.setAll(clientes);
+
+        // Configura las columnas con PropertyValueFactory para que accedan a los
+        // métodos de la clase Cliente
+        tbc_nombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+        tbc_cedula.setCellValueFactory(
+                cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getCedula())));
+        tbc_telefono.setCellValueFactory(
+                cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getTelefono())));
+        tbc_correo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCorreo()));
+
+        // Asigna la lista de clientes a la TableView
+        tb_listClientes.setItems(listClientes);
+    }
 
     @FXML
     void onVolver(ActionEvent event) {
@@ -77,26 +107,79 @@ public class GestionClViewController {
     }
 
     @FXML
-    void onActualizar(ActionEvent event) {
+    void onCedula(ActionEvent event) {
 
-      cc.actualizarCliente(123, new Cliente("hola", 123, 123, "aaa"));
-        
+    }
+
+    @FXML
+    void onTelefono(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onCorreo(ActionEvent event) {
+
+    }
+
+    @FXML
+
+    void onActualizar(ActionEvent event) {
+        actualizarCliente();
     }
 
     @FXML
     void onAgregar(ActionEvent event) {
-        //agregarCliente();
+        agregarCliente();
+
     }
 
     @FXML
     void onEliminar(ActionEvent event) {
-        //eliminarCliente();
+        eliminarCliente();
+
     }
 
     App app;
 
     public void setApp(App app) {
         this.app = app;
+    }
+
+    private void actualizarTabla() {
+        tb_listClientes.refresh();
+    }
+
+    private void limpiarCampos() {
+        txf_nombre.setText("");
+        txf_cedula.setText("");
+        txf_telefono.setText("");
+        txf_correo.setText("");
+    }
+
+    private void actualizarCliente(){
+        int cedula = Integer.parseInt(txf_cedula.getText());
+        Cliente clienteActualizado = new Cliente(txf_nombre.getText(), cedula, Integer.parseInt(txf_telefono.getText()),
+                txf_correo.getText());
+        empresa.actualizarCliente(cedula, clienteActualizado);
+        actualizarTabla();
+        limpiarCampos();
+    }
+    private void agregarCliente() { int cedula = Integer.parseInt(txf_cedula.getText()); 
+    Cliente nuevoCliente = new Cliente(txf_nombre.getText(), cedula, Integer.parseInt(txf_telefono.getText()), txf_correo.getText()); 
+    if (empresa.agregarCliente(nuevoCliente)) { 
+        listClientes.add(nuevoCliente); 
+        actualizarTabla(); limpiarCampos(); 
+        } else { 
+            txt_tucarro.setText("El cliente ya existe."); 
+        } 
+    }
+    private void eliminarCliente() { 
+        int cedula = Integer.parseInt(txf_cedula.getText()); 
+    if (empresa.eliminarCliente(cedula)) { 
+        listClientes.removeIf(cliente -> cliente.getCedula() == cedula); actualizarTabla(); limpiarCampos(); 
+        } else { 
+            txt_tucarro.setText("El cliente no existe.");
+        }
     }
 
 }

@@ -1,39 +1,39 @@
 package co.edu.uniquindio.poo.model;
 
 public class Reserva {
-    private Vehiculo vehiculo;
-    private int tiempoReserva;
-    private Cliente cliente;
+    private String vehiculo;
+    private String tiempoReserva;
+    private String cliente;
     private String id;
 
-    public Reserva(Vehiculo vehiculo, int tiempoReserva, Cliente cliente, String id) {
+    public Reserva(String vehiculo, String tiempoReserva, String cliente, String id) {
         this.vehiculo = vehiculo;
         this.tiempoReserva = tiempoReserva;
         this.cliente = cliente;
         this.id = id;
     }
 
-    public Vehiculo getVehiculo() {
+    public String getVehiculo() {
         return vehiculo;
     }
 
-    public void setVehiculo(Vehiculo vehiculo) {
+    public void setVehiculo(String vehiculo) {
         this.vehiculo = vehiculo;
     }
 
-    public int getTiempoReserva() {
+    public String getTiempoReserva() {
         return tiempoReserva;
     }
 
-    public void setTiempoReserva(int tiempoReserva) {
+    public void setTiempoReserva(String tiempoReserva) {
         this.tiempoReserva = tiempoReserva;
     }
 
-    public Cliente getCliente() {
+    public String getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(String cliente) {
         this.cliente = cliente;
     }
 
@@ -50,6 +50,8 @@ public class Reserva {
         return "Reserva [vehiculo=" + vehiculo + ", tiempoReserva=" + tiempoReserva + ", cliente=" + cliente + ", id="
                 + id + "]";
     }
+
+    
 
 
 }

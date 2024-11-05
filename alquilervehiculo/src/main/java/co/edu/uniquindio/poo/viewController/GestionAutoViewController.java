@@ -10,11 +10,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import co.edu.uniquindio.poo.model.Auto;
+
 
 public class GestionAutoViewController {
 
     @FXML
-    private TableColumn<?, ?> tbc_puertas;
+    private TableColumn<Auto, String> tbc_puertas;
 
     @FXML
     private Text txt_marca;
@@ -41,7 +43,7 @@ public class GestionAutoViewController {
     private AnchorPane ap_gestionVehiculo;
 
     @FXML
-    private TableView<?> tb_vehiculos;
+    private TableView<Auto> tb_vehiculos;
 
     @FXML
     private TextField txf_puertas;
@@ -50,7 +52,7 @@ public class GestionAutoViewController {
     private Text txt_vehiculos;
 
     @FXML
-    private TableColumn<?, ?> tbc_disponible;
+    private TableColumn<Auto, String> tbc_disponible;
 
     @FXML
     private Text txt_tucarro;
@@ -71,7 +73,7 @@ public class GestionAutoViewController {
     private Text txt_gestionVh;
 
     @FXML
-    private TableColumn<?, ?> tbc_matricula;
+    private TableColumn<Auto, String> tbc_matricula;
 
     @FXML
     private TextField txf_modelo;
@@ -80,25 +82,20 @@ public class GestionAutoViewController {
     private Text txt_añoFabricacion;
 
     @FXML
-    private TableColumn<?, ?> tbc_añoFabricacion;
+    private TableColumn<Auto, String> tbc_añoFabricacion;
 
     @FXML
     private TextField txf_añoFabricacion;
 
     @FXML
-    private TableColumn<?, ?> tbc_modelo;
+    private TableColumn<Auto, String> tbc_modelo;
 
     @FXML
-    private TableColumn<?, ?> tbc_marca;
+    private TableColumn<Auto, String> tbc_marca;
 
     @FXML
     void onVolver(ActionEvent event) {
         app.openGestionVh();
-    }
-
-    @FXML
-    void onVehiculos(ActionEvent event) {
-
     }
 
     @FXML

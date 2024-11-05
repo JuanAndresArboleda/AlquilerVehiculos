@@ -35,6 +35,11 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
+      <ImageView fx:id="img_carro" fitHeight="443.0" fitWidth="444.0" layoutX="317.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen_de_WhatsApp_2024-10-26_a_las_13.16.28_569082e0-removebg-preview.png" />
+         </image>
+      </ImageView>
       <Button id="btn_volver" fx:id="btn_auto" layoutX="156.0" layoutY="197.0" mnemonicParsing="false" onAction="#onAuto" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Auto" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
@@ -50,10 +55,5 @@
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <ImageView fx:id="img_carro" fitHeight="443.0" fitWidth="444.0" layoutX="317.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Imagen_de_WhatsApp_2024-10-26_a_las_13.16.28_569082e0-removebg-preview.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

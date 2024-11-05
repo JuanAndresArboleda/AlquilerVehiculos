@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="ap_gestionVh" fx:controller="co.edu.uniquindio.poo.viewController.GestionVhViewController" 
-maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane fx:id="ap_gestionVh" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.GestionVhViewController">
    <children>
       <Label layoutX="214.0" layoutY="128.0" text="Nombre" />
       <SubScene height="472.0" layoutX="27.0" layoutY="28.0" width="679.0">
@@ -26,7 +25,7 @@ maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infi
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Text id="txt_iniciarSesion" fx:id="txt_iniciarSesion" fill="#ffc300" layoutX="237.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Vehiculos" textAlignment="CENTER" wrappingWidth="258.92919921875">
+      <Text id="txt_iniciarSesion" fx:id="txt_menuVh" fill="#ffc300" layoutX="237.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Vehiculos" textAlignment="CENTER" wrappingWidth="258.92919921875">
          <font>
             <Font name="Bauhaus 93" size="33.0" />
          </font>

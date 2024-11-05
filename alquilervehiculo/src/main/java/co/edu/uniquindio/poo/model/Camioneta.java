@@ -1,30 +1,29 @@
 package co.edu.uniquindio.poo.model;
 
-public class Camioneta extends Vehiculo{
+public class Camioneta extends Vehiculo {
 
-    private int capacidadCarga;
+    private String capacidadCarga;
 
-    public Camioneta(String marca, String matricula, String modelo, String añoFabricacion, int capacidadCarga){
+    public Camioneta(String marca, String matricula, String modelo, String añoFabricacion, String capacidadCarga) {
         super(marca, matricula, modelo, añoFabricacion);
         this.capacidadCarga = capacidadCarga;
     }
- public double calcularCostoReserva(int dias) {
+
+    public double calcularCostoReserva(int dias) {
         double costoTotal = 80000 * dias;
 
-        double costoCarga = capacidadCarga * 100000;
+        int capacidadCargaInt = Integer.parseInt(capacidadCarga);
+        double costoCarga = capacidadCargaInt * 100000;
         costoTotal += costoCarga;
 
         return costoTotal;
     }
-  
 
-
-   
-    public int getCapacidadCarga() {
+    public String getCapacidadCarga() {
         return capacidadCarga;
     }
 
-    public void setCapacidadCarga(int capacidadCarga) {
+    public void setCapacidadCarga(String capacidadCarga) {
         this.capacidadCarga = capacidadCarga;
     }
 
@@ -32,5 +31,7 @@ public class Camioneta extends Vehiculo{
     public String toString() {
         return "Camioneta [capacidadCarga=" + capacidadCarga + "]";
     }
-    
+
+   
+
 }

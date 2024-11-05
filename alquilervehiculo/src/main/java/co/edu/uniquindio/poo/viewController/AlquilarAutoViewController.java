@@ -1,6 +1,12 @@
 package co.edu.uniquindio.poo.viewController;
 
 import co.edu.uniquindio.poo.App;
+import co.edu.uniquindio.poo.controller.AlquilarAutoController;
+import co.edu.uniquindio.poo.model.Auto;
+import co.edu.uniquindio.poo.model.Reserva;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.SubScene;
@@ -14,11 +20,15 @@ import javafx.scene.text.Text;
 
 public class AlquilarAutoViewController {
 
+    AlquilarAutoController alquilarAutoController;
+    ObservableList<Auto> listAutos = FXCollections.observableArrayList();
+    Auto selectedAuto;
+
     @FXML
     private SubScene ssc_fondo2;
 
     @FXML
-    private TableColumn<?, ?> tbc_puertas;
+    private TableColumn<Auto, String> tbc_puertas;
 
     @FXML
     private TextArea txf_detallesUso;
@@ -39,13 +49,13 @@ public class AlquilarAutoViewController {
     private Button btn_volver;
 
     @FXML
-    private TableColumn<?, ?> tbc_matricula;
+    private TableColumn<Auto, String> tbc_matricula;
 
     @FXML
     private Button btn_reservar;
 
     @FXML
-    private TableView<?> tb_vehiculos;
+    private TableView<Auto> tbl_listAutos;
 
     @FXML
     private Text txt_tiempoReserva;
@@ -54,19 +64,19 @@ public class AlquilarAutoViewController {
     private Text txt_alquilarVehiculo;
 
     @FXML
-    private TableColumn<?, ?> tbc_añoFabricacion;
+    private TableColumn<Auto, String> tbc_añoFabricacion;
 
     @FXML
     private Text txt_vehiculos;
 
     @FXML
-    private TableColumn<?, ?> tbc_disponible;
+    private TableColumn<Auto, String> tbc_disponible;
 
     @FXML
-    private TableColumn<?, ?> tbc_modelo;
+    private TableColumn<Auto, String> tbc_modelo;
 
     @FXML
-    private TableColumn<?, ?> tbc_marca;
+    private TableColumn<Auto, String> tbc_marca;
 
     @FXML
     private Text txt_tucarro;
@@ -83,13 +93,79 @@ public class AlquilarAutoViewController {
 
     @FXML
     void onReservar(ActionEvent event) {
-
+        reservarAuto();
     }
 
     App app;
 
     public void setApp(App app) {
         this.app = app;
+    }
+
+    @SuppressWarnings("static-access")
+    @FXML
+    void initialize() {
+        alquilarAutoController = new AlquilarAutoController(app.empresa);
+        initView();
+    }
+    
+
+    private void initView() {
+        // Traer los datos del Auto a la tabla
+        initDataBinding();
+
+        // Obtiene la lista
+        obtenerAutos();
+
+        // Agregar los elementos a la tabla
+        tbl_listAutos.setItems(listAutos);
+
+        // Seleccionar elemento de la tabla
+        listenerSelection();
+    }
+
+    private void initDataBinding() {
+        tbc_modelo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getModelo()));
+        tbc_marca.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMarca()));
+        tbc_matricula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMatricula()));
+        tbc_añoFabricacion
+                .setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAñoFabricacion()));
+        tbc_puertas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCantidadPuertas()));
+
+        //tbc_disponible.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().determinarDisponibilidad()));
+
+        // Usamos SimpleObjectProperty para manejar Double y Integer correctamente
+    }
+
+    private void obtenerAutos() {
+        Auto auto = new Auto("Toyota", "19827", "2016", "2012", "4");
+        listAutos.add(auto);
+        Auto auto2 = new Auto("Renault", "81826", "2018", "2017", "4");
+        listAutos.add(auto2);
+    }
+
+    private void listenerSelection() {
+        tbl_listAutos.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            selectedAuto = newSelection;
+        });
+    }
+
+    private void reservarAuto() {
+        if (!txf_tiempoReserva.getText().isEmpty()) { 
+            Reserva reserva = new Reserva(selectedAuto.getMatricula(), txf_tiempoReserva.getText(), "cliente1", "213");
+            ReservasViewController.listReservas.add(reserva);
+            limpiarCampos();
+        }
+    }
+    
+
+    private void limpiarCampos() {
+        txf_tiempoReserva.clear();
+        txf_detallesUso.clear();
+    }
+
+    private void determinarDisponibilidad() {
+    
     }
 
 }

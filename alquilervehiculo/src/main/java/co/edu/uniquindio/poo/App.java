@@ -12,7 +12,6 @@ import co.edu.uniquindio.poo.model.Vehiculo;
 import co.edu.uniquindio.poo.model.Moto;
 import co.edu.uniquindio.poo.model.Caja;
 import co.edu.uniquindio.poo.model.Auto;
-import co.edu.uniquindio.poo.model.Camioneta;
 import co.edu.uniquindio.poo.viewController.ClienteViewController;
 import co.edu.uniquindio.poo.viewController.AdministradorViewController;
 import co.edu.uniquindio.poo.viewController.AlquilarAutoViewController;
@@ -28,13 +27,13 @@ import co.edu.uniquindio.poo.viewController.GestionAutoViewController;
 import co.edu.uniquindio.poo.viewController.GestionCamionetaViewController;
 import co.edu.uniquindio.poo.viewController.GestionMotoViewController;
 
-
 public class App extends Application {
 
     private Stage primaryStage;
     @SuppressWarnings("exports")
     public static Empresa empresa = new Empresa("TuCarro.com", 123);
 
+    @SuppressWarnings("exports")
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -52,10 +51,10 @@ public class App extends Application {
             FXMLLoader loader1 = new FXMLLoader();
             loader1.setLocation(App.class.getResource("usuario.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader1.load(); // Cambiado de VBox a AnchorPane
-            
+
             UsuarioViewController usuarioViewController = loader1.getController();
             usuarioViewController.setApp(this);
-    
+
             Scene scene1 = new Scene(rootLayout);
             primaryStage.setScene(scene1);
             primaryStage.show();
@@ -121,11 +120,11 @@ public class App extends Application {
             FXMLLoader loader5 = new FXMLLoader();
             loader5.setLocation(App.class.getResource("menuVehiculos.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader5.load();
-            
+
             // Obtén el controlador y asigna la instancia de App
             MenuVhViewController menuVhViewController = loader5.getController();
             menuVhViewController.setApp(this); // Aquí inicializas la variable `app` en el controlador
-    
+
             Scene scene5 = new Scene(rootLayout);
             primaryStage.setScene(scene5);
             primaryStage.show();
@@ -209,8 +208,9 @@ public class App extends Application {
             loader10.setLocation(App.class.getResource("gestionCliente.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader10.load();
             GestionClViewController gestionClViewController = loader10.getController();
-            gestionClViewController.setApp(this);
 
+            gestionClViewController.setApp(this);
+            
             Scene scene10 = new Scene(rootLayout);
             primaryStage.setScene(scene10);
             primaryStage.show();
@@ -289,8 +289,9 @@ public class App extends Application {
     }
 
     // servicios
-
+    
     public void inicializarData() {
+        
         Cliente cliente1 = new Cliente("juan", 12345, 32022, "juan@gmail.com");
         empresa.agregarCliente(cliente1);
         Cliente cliente2 = new Cliente("nasly", 12346, 32023, "nasly@gmail.com");
@@ -300,12 +301,10 @@ public class App extends Application {
 
         Vehiculo[] arregloVehiculos;
         arregloVehiculos = new Vehiculo[6];
-        arregloVehiculos[0] = new Moto("KAWASAKI","10223","2015","2010",Caja.AUTOMATICA);
-        arregloVehiculos[1] = new Moto("VIWIS","42341","2013","2009",Caja.MANUAL);
-        arregloVehiculos[2] = new Auto("TOYOTA","81823","2016","2012", 4);
-        arregloVehiculos[3] = new Auto("SENDERO","03852","2017","2013", 2);
-        arregloVehiculos[4] = new Camioneta("TOYOTA","74821","2015","2010",15);
-        arregloVehiculos[5] = new Camioneta("TOYOTA","74827","2021","2020",20);
+        arregloVehiculos[0] = new Moto("KAWASAKI", "10223", "2015", "2010", Caja.AUTOMATICA);
+        arregloVehiculos[1] = new Moto("VIWIS", "42341", "2013", "2009", Caja.MANUAL);
+        arregloVehiculos[2] = new Auto("TOYOTA", "81823", "2016", "2012", "4");
+        arregloVehiculos[3] = new Auto("SENDERO", "03852", "2017", "2013", "2");
     }
 
 }

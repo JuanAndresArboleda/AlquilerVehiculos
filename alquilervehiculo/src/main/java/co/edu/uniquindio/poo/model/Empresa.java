@@ -4,13 +4,16 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 public class Empresa {
-    
+
     private String nombre;
     private int id;
     private Collection<Cliente> clientes;
+    private Collection<Auto> autos;
+    private Collection<Reserva> reservas;
+    private Collection<Camioneta> camionetas;
+    private Collection<Moto> motos; 
 
-
-    public Empresa(String nombre, int id){ 
+    public Empresa(String nombre, int id) {
         this.nombre = nombre;
         this.id = id;
         clientes = new LinkedList<>();
@@ -52,7 +55,7 @@ public class Empresa {
         return centinela;
     }
 
-    public boolean verificarCliente( int cedula) {
+    public boolean verificarCliente(int cedula) {
         boolean centinela = false;
         for (Cliente cliente : clientes) {
             if (cliente.getCedula() == cedula) {
@@ -61,7 +64,6 @@ public class Empresa {
         }
         return centinela;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -87,10 +89,46 @@ public class Empresa {
         this.clientes = clientes;
     }
 
-    @Override
-    public String toString() {
-        return "Empresa [nombre=" + nombre + ", id=" + id + ", clientes=" + clientes + "]";
+    public Collection<Auto> getAutos() {
+        return autos;
     }
 
-}
+    public void setAutos(Collection<Auto> autos) {
+        this.autos = autos;
+    }
 
+    public Collection<Reserva> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(Collection<Reserva> reservas) {
+        this.reservas = reservas;
+    }
+
+    public Collection<Camioneta> getCamionetas() {
+        return camionetas;
+    }
+
+    public void setCamionetas(Collection<Camioneta> camionetas) {
+        this.camionetas = camionetas;
+    }
+
+    public Collection<Moto> getMotos() {
+        return motos;
+    }
+
+    public void setMotos(Collection<Moto> motos) {
+        this.motos = motos;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa [nombre=" + nombre + ", id=" + id + ", clientes=" + clientes + ", autos=" + autos
+                + ", reservas=" + reservas + ", camionetas=" + camionetas + ", motos=" + motos + "]";
+    }
+
+   
+
+    
+
+}

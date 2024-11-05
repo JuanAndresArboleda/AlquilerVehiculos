@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import co.edu.uniquindio.poo.model.Moto;
+import co.edu.uniquindio.poo.model.Caja;
 
 public class GestionMotoViewController {
 
@@ -41,19 +43,19 @@ public class GestionMotoViewController {
     private AnchorPane ap_gestionVehiculo;
 
     @FXML
-    private TableView<?> tb_vehiculos;
+    private TableView<Caja> tb_vehiculos;
 
     @FXML
     private Text txt_vehiculos;
 
     @FXML
-    private TableColumn<?, ?> tbc_disponible;
+    private TableColumn<Moto, String> tbc_disponible;
 
     @FXML
     private Text txt_tucarro;
 
     @FXML
-    private TableColumn<?, ?> tbc_caja;
+    private TableColumn<Caja, String> tbc_caja;
 
     @FXML
     private Button btn_agregaVehiculo;
@@ -68,7 +70,7 @@ public class GestionMotoViewController {
     private Text txt_gestionVh;
 
     @FXML
-    private TableColumn<?, ?> tbc_matricula;
+    private TableColumn<Moto, String> tbc_matricula;
 
     @FXML
     private TextField txf_modelo;
@@ -77,22 +79,22 @@ public class GestionMotoViewController {
     private Text txt_añoFabricacion;
 
     @FXML
-    private TableColumn<?, ?> tbc_añoFabricacion;
+    private TableColumn<Moto, String> tbc_añoFabricacion;
 
     @FXML
-    private TableColumn<?, ?> tbc_tipo;
+    private TableColumn<Moto, String> tbc_tipo;
 
     @FXML
     private TextField txf_añoFabricacion;
 
     @FXML
-    private TableColumn<?, ?> tbc_modelo;
+    private TableColumn<Moto, String> tbc_modelo;
 
     @FXML
     private TextField txf_caja;
 
     @FXML
-    private TableColumn<?, ?> tbc_marca;
+    private TableColumn<Moto, String> tbc_marca;
 
     @FXML
     void onVolver(ActionEvent event) {

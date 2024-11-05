@@ -6,9 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id= "ap_administrador" fx:controller="co.edu.uniquindio.poo.viewController.AdministradorViewController"
-            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="579.0" 
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="ap_administrador" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.AdministradorViewController">
    <children>
       <Label layoutX="214.0" layoutY="128.0" text="Nombre" />
       <SubScene height="385.0" layoutX="27.0" layoutY="28.0" width="526.0">
@@ -36,7 +34,7 @@
             <Font name="Bauhaus 93" size="33.0" />
          </font>
       </Text>
-      <TextField id="lbl_nombreAd" fx:id="txf_nombre" layoutX="86.0" layoutY="155.0" onAction="#onNombre" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_nombreAd" fx:id="txf_nombreAd" layoutX="86.0" layoutY="155.0" onAction="#onNombre" prefHeight="38.0" prefWidth="409.0" />
       <TextField id="lbl_contraseñaAd" fx:id="txf_contraseña" layoutX="86.0" layoutY="243.0" onAction="#onContraseña" prefHeight="38.0" prefWidth="409.0" />
       <Text id="txt_contraseña" layoutX="59.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>

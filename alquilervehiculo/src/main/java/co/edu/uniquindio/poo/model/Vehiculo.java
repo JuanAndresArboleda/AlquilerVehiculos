@@ -1,16 +1,16 @@
 package co.edu.uniquindio.poo.model;
 
 public abstract class Vehiculo {
-    
+
     private String marca, matricula, modelo, añoFabricacion;
     private boolean disponible;
 
-    public Vehiculo(String marca, String matricula, String modelo, String añoFabricacion){
+    public Vehiculo(String marca, String matricula, String modelo, String añoFabricacion) {
         this.marca = marca;
         this.matricula = matricula;
         this.modelo = modelo;
         this.añoFabricacion = añoFabricacion;
-        this.disponible = true; 
+        this.disponible = true;
     }
 
     public abstract double calcularCostoReserva(int dias);
@@ -46,10 +46,12 @@ public abstract class Vehiculo {
     public void setAñoFabricacion(String añoFabricacion) {
         this.añoFabricacion = añoFabricacion;
     }
-        public boolean isDisponible() {
+
+    public boolean isDisponible() {
         return disponible;
     }
-        public boolean reservar() {
+
+    public boolean reservar() {
         if (disponible) {
             disponible = false;
             return true;
@@ -62,7 +64,5 @@ public abstract class Vehiculo {
         return "Vehiculo [marca=" + marca + ", matricula=" + matricula + ", modelo=" + modelo + ", añoFabricacion="
                 + añoFabricacion + "]";
     }
-
-    
 
 }

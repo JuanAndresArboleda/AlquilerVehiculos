@@ -41,7 +41,7 @@ public class UsuarioViewController {
 
   @FXML
   void onCliente(ActionEvent event) {
-    app.openCliente();
+    app.openReservas();
   }
 
   App app;

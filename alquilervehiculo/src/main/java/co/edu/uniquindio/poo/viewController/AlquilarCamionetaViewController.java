@@ -128,17 +128,15 @@ public class AlquilarCamionetaViewController {
         tbc_añoFabricacion
                 .setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAñoFabricacion()));
         tbc_carga.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCapacidadCarga()));
-
-
-        //tbc_disponible.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().determinarDisponibilidad()));
+        tbc_disponible.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDisponible()));
 
         // Usamos SimpleObjectProperty para manejar Double y Integer correctamente
     }
 
     private void obtenerCamionetas() {
-        Camioneta camioneta = new Camioneta("Toyota", "74821", "2015", "2010", "15");
+        Camioneta camioneta = new Camioneta("Toyota", "74821", "2015", "2010","si", "15");
         listCamionetas.add(camioneta);
-        Camioneta camioneta2 = new Camioneta("Toyota", "01482", "2021", "2015", "20");
+        Camioneta camioneta2 = new Camioneta("Toyota", "01482", "2021", "2015","si", "20");
         listCamionetas.add(camioneta2);
     }
 
@@ -162,7 +160,4 @@ public class AlquilarCamionetaViewController {
         txf_detallesUso.clear();
     }
 
-    private void determinarDisponibilidad() {
-        
-    }
 }

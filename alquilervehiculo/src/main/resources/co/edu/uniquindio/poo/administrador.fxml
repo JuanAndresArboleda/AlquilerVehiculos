@@ -34,8 +34,8 @@
             <Font name="Bauhaus 93" size="33.0" />
          </font>
       </Text>
-      <TextField id="lbl_nombreAd" fx:id="txf_nombreAd" layoutX="86.0" layoutY="155.0" onAction="#onNombre" prefHeight="38.0" prefWidth="409.0" />
-      <TextField id="lbl_contraseñaAd" fx:id="txf_contraseña" layoutX="86.0" layoutY="243.0" onAction="#onContraseña" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_nombreAd" fx:id="txf_nombreAd" layoutX="86.0" layoutY="155.0" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_contraseñaAd" fx:id="txf_contraseña" layoutX="86.0" layoutY="243.0" prefHeight="38.0" prefWidth="409.0" />
       <Text id="txt_contraseña" layoutX="59.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />

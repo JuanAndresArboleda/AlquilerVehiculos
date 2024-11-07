@@ -3,17 +3,28 @@ package co.edu.uniquindio.poo.model;
 public abstract class Vehiculo {
 
     private String marca, matricula, modelo, añoFabricacion;
-    private boolean disponible;
+    private String disponible;
 
-    public Vehiculo(String marca, String matricula, String modelo, String añoFabricacion) {
+    public Vehiculo(String marca, String matricula, String modelo, String añoFabricacion, String disponible) {
         this.marca = marca;
         this.matricula = matricula;
         this.modelo = modelo;
         this.añoFabricacion = añoFabricacion;
-        this.disponible = true;
+        this.disponible = disponible;
     }
 
+    //public abstract String determinarDisponibilidad(String matricula, Vehiculo vehiculo);
+
     public abstract double calcularCostoReserva(int dias);
+
+ 
+    public boolean reservar() {
+    if (disponible.equalsIgnoreCase("sí")) {
+        disponible = "no";
+        return true;
+    }
+    return false;
+}
 
     public String getMarca() {
         return marca;
@@ -47,22 +58,19 @@ public abstract class Vehiculo {
         this.añoFabricacion = añoFabricacion;
     }
 
-    public boolean isDisponible() {
+    public String getDisponible() {
         return disponible;
     }
 
-    public boolean reservar() {
-        if (disponible) {
-            disponible = false;
-            return true;
-        }
-        return false;
+    public void setDisponible(String disponible) {
+        this.disponible = disponible;
     }
 
     @Override
     public String toString() {
         return "Vehiculo [marca=" + marca + ", matricula=" + matricula + ", modelo=" + modelo + ", añoFabricacion="
-                + añoFabricacion + "]";
+                + añoFabricacion + ", disponible=" + disponible + "]";
     }
+
 
 }

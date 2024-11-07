@@ -139,9 +139,9 @@ public class AlquilarMotoViewController {
     }
 
     private void obtenerMotos() {
-        Moto moto = new Moto("Kawasaki", "10223", "2015", "2010", Caja.AUTOMATICA);
+        Moto moto = new Moto("Kawasaki", "10223", "2015", "2010", "si", Caja.AUTOMATICA);
         listMotos.add(moto);
-        Moto moto2 = new Moto("Viwis", "42341", "2013", "2009", Caja.MANUAL);
+        Moto moto2 = new Moto("Viwis", "42341", "2013", "2009", "si", Caja.MANUAL);
         listMotos.add(moto2);
     }
 
@@ -164,7 +164,4 @@ public class AlquilarMotoViewController {
         txf_detallesUso.clear();
     }
 
-    private void determinarDisponibilidad() {
-        
-    }
 }

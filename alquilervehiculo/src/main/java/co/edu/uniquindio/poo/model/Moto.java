@@ -1,21 +1,30 @@
 package co.edu.uniquindio.poo.model;
 
 public class Moto extends Vehiculo {
-    private boolean disponible;
     private Caja caja;
-    public Moto(String marca, String matricula, String modelo, String añoFabricacion,Caja caja){
-        super(marca, matricula, modelo, añoFabricacion);
-        this.caja=caja;
-        this.disponible = true;
+
+    public Moto(String marca, String matricula, String modelo, String añoFabricacion, String disponible, Caja caja) {
+        super(marca, matricula, modelo, añoFabricacion, disponible);
+        this.caja = caja;
     }
 
- @Override
-    public double calcularCostoReserva(int dias) {
-        double costoTotal =  100000* dias;
+    /*
+    @Override
+    public String determinarDisponibilidad(String matricula, Vehiculo vehiculo) {
+       for(Vehiculo moto: motos){
+            if(moto.getMatricula.equals(matricula)){
 
-        
+            }
+        }
+
+    }*/
+
+    @Override
+    public double calcularCostoReserva(int dias) {
+        double costoTotal = 100000 * dias;
+
         if (caja == Caja.AUTOMATICA) {
-            costoTotal += 300 * dias; 
+            costoTotal += 300 * dias;
         }
 
         return costoTotal;
@@ -27,12 +36,6 @@ public class Moto extends Vehiculo {
 
     public void setCaja(Caja caja) {
         this.caja = caja;
-    }
-    public boolean isDisponible() {
-        return disponible;
-    }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
     }
 }

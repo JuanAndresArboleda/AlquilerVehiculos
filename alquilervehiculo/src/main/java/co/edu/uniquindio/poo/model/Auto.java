@@ -1,11 +1,11 @@
 package co.edu.uniquindio.poo.model;
 
-public class Auto extends Vehiculo {
+public class Auto extends Vehiculo{
 
     private String cantidadPuertas;
 
-    public Auto(String marca, String matricula, String modelo, String añoFabricacion, String cantidadPuertas) {
-        super(marca, matricula, modelo, añoFabricacion);
+    public Auto(String marca, String matricula, String modelo, String añoFabricacion, String disponible, String cantidadPuertas) {
+        super(marca, matricula, modelo, añoFabricacion, disponible);
         this.cantidadPuertas = cantidadPuertas;
     }
 
@@ -26,5 +26,8 @@ public class Auto extends Vehiculo {
     public String toString() {
         return "Auto [cantidadPuertas=" + cantidadPuertas + "]";
     }
+
+
+    
 
 }

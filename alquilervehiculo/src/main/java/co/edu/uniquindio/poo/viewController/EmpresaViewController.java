@@ -42,9 +42,6 @@ public class EmpresaViewController {
     private Text txt_queDeseaHacer;
 
     @FXML
-    private TableColumn<Reserva, String> tbc_vehiculo;
-
-    @FXML
     private Text txt_bienvenido;
 
     @FXML
@@ -52,9 +49,6 @@ public class EmpresaViewController {
 
     @FXML
     private TableColumn<Reserva, String> tbc_nombre;
-
-    @FXML
-    private TableColumn<Reserva, String> tbc_tipo;
 
     @FXML
     private Text txt_reservas;
@@ -106,7 +100,7 @@ public class EmpresaViewController {
 
     private void initView() {
 
-        actualizarNombre();
+        //actualizarNombre();
         // Traer los datos de la Reserva a la tabla
         initDataBinding();
 
@@ -137,8 +131,8 @@ public class EmpresaViewController {
         }
     }
 
-    private void actualizarNombre() {
-        String nombre = new AdministradorViewController().obtenerNombre();
+    private void actualizarNombre(AdministradorViewController administradorViewController) {
+        String nombre = administradorViewController.obtenerNombre();
         txt_nombreAdministrador.setText(nombre);
     }
 }

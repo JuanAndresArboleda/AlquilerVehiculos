@@ -299,12 +299,21 @@ public class App extends Application {
         Cliente cliente3 = new Cliente("pedro", 12347, 32024, "pedro@gmail.com");
         empresa.agregarCliente(cliente3);
 
+        /*
+        Auto auto1 = new Auto("Toyota", "19827", "2016", "2012", "4");
+        empresa.agregarAuto(auto1);
+        Auto auto2 = new Auto("Renault", "81826", "2018", "2017", "4");
+        empresa.agregarAuto(auto2);
+        */
+
+        /* 
         Vehiculo[] arregloVehiculos;
         arregloVehiculos = new Vehiculo[6];
         arregloVehiculos[0] = new Moto("KAWASAKI", "10223", "2015", "2010", Caja.AUTOMATICA);
         arregloVehiculos[1] = new Moto("VIWIS", "42341", "2013", "2009", Caja.MANUAL);
         arregloVehiculos[2] = new Auto("TOYOTA", "81823", "2016", "2012", "4");
         arregloVehiculos[3] = new Auto("SENDERO", "03852", "2017", "2013", "2");
+        */
     }
 
 }

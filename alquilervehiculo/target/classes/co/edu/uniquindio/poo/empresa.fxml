@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="ap_empresa" fx:controller="co.edu.uniquindio.poo.viewController.EmpresaViewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="895.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="ap_empresa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="895.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.EmpresaViewController">
    <children>
       <SubScene height="386.0" layoutX="26.0" layoutY="339.0" width="844.0">
          <root>
@@ -54,22 +54,17 @@
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <TableView id="tb_listReservas" fx:id="tb_listReservas" layoutX="79.0" layoutY="403.0" onSort="#onReservas" prefHeight="240.0" prefWidth="738.0">
+      <TableView id="tb_listReservas" fx:id="tb_listReservas" layoutX="79.0" layoutY="403.0" prefHeight="240.0" prefWidth="738.0">
         <columns>
-          <TableColumn id="tbc_idR" fx:id="tbc_id" prefWidth="115.0" text="Id" />
-          <TableColumn id="tbc_vehiculoR" fx:id="tbc_vehiculo" prefWidth="446.0" text="Vehiculo">
-               <columns>
-                  <TableColumn id="tbc_tipoVehiculoR" fx:id="tbc_tipo" prefWidth="138.0" text="Tipo" />
-                  <TableColumn id="tbc_matriculaVehiculoR" fx:id="tbc_matricula" prefWidth="128.0" text="Matricula" />
-               </columns>
-            </TableColumn>
-            <TableColumn id="tbc_tiempoR" fx:id="tbc_tiempo" prefWidth="103.0" text="Tiempo" />
-            <TableColumn id="tbc_clienteR" fx:id="tbc_cliente" prefWidth="132.0" text="Cliente">
+          <TableColumn id="tbc_idR" fx:id="tbc_id" prefWidth="127.0" text="Id" />
+            <TableColumn id="tbc_tiempoR" fx:id="tbc_tiempo" prefWidth="151.0" text="Tiempo" />
+            <TableColumn id="tbc_clienteR" fx:id="tbc_cliente" prefWidth="236.0" text="Cliente">
                <columns>
                   <TableColumn id="tbc_nombreClienteR" fx:id="tbc_nombre" prefWidth="125.0" text="Nombre" />
                   <TableColumn id="tbc_cedulaClienteR" fx:id="tbc_cedula" prefWidth="128.0" text="Cedula" />
                </columns>
             </TableColumn>
+            <TableColumn id="tbc_matriculaVehiculoR" fx:id="tbc_matricula" prefWidth="206.0" text="Vehiculo (Matricula)" />
         </columns>
       </TableView>
       <Text id="lbl_reserva" fx:id="txt_reservas" fill="#ffc300" layoutX="70.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESERVAS" textAlignment="CENTER" wrappingWidth="160.86474609375">

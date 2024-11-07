@@ -51,14 +51,9 @@
       </Button>
       <TableView id="tb_listReservas" fx:id="tb_listReservas" layoutX="79.0" layoutY="404.0" prefHeight="234.0" prefWidth="738.0">
          <columns>
-            <TableColumn fx:id="tbc_id" prefWidth="176.0" text="Id" />
-            <TableColumn fx:id="tbc_vehiculo" prefWidth="331.0" text="Vehiculo">
-               <columns>
-                  <TableColumn fx:id="tbc_tipo" prefWidth="178.0" text="Tipo" />
-                  <TableColumn fx:id="tbc_matricula" prefWidth="177.0" text="Matricula" />
-               </columns>
-            </TableColumn>
-            <TableColumn fx:id="tbc_tiempo" prefWidth="206.0" text="Tiempo (Dias)" />
+            <TableColumn fx:id="tbc_id" prefWidth="257.0" text="Id" />
+            <TableColumn fx:id="tbc_tiempo" prefWidth="235.0" text="Tiempo (Dias)" />
+            <TableColumn fx:id="tbc_matricula" prefWidth="245.0" text="Vehiculo (Matricula)" />
          </columns>
       </TableView>
       <Text fx:id="txt_reservas" fill="#ffc300" layoutX="65.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIS RESERVAS" textAlignment="CENTER" wrappingWidth="224.86474609375">

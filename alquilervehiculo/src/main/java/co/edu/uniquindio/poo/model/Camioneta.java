@@ -4,8 +4,8 @@ public class Camioneta extends Vehiculo {
 
     private String capacidadCarga;
 
-    public Camioneta(String marca, String matricula, String modelo, String añoFabricacion, String capacidadCarga) {
-        super(marca, matricula, modelo, añoFabricacion);
+    public Camioneta(String marca, String matricula, String modelo, String añoFabricacion,String disponible, String capacidadCarga) {
+        super(marca, matricula, modelo, añoFabricacion, disponible);
         this.capacidadCarga = capacidadCarga;
     }
 

@@ -87,11 +87,6 @@ public class AlquilarAutoViewController {
     }
 
     @FXML
-    void onTiempo(ActionEvent event) {
-
-    }
-
-    @FXML
     void onReservar(ActionEvent event) {
         reservarAuto();
     }
@@ -131,16 +126,15 @@ public class AlquilarAutoViewController {
         tbc_añoFabricacion
                 .setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAñoFabricacion()));
         tbc_puertas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCantidadPuertas()));
-
-        //tbc_disponible.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().determinarDisponibilidad()));
+        tbc_disponible.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDisponible()));
 
         // Usamos SimpleObjectProperty para manejar Double y Integer correctamente
     }
 
     private void obtenerAutos() {
-        Auto auto = new Auto("Toyota", "19827", "2016", "2012", "4");
+        Auto auto = new Auto("Toyota", "19827", "2016", "2012","si", "4");
         listAutos.add(auto);
-        Auto auto2 = new Auto("Renault", "81826", "2018", "2017", "4");
+        Auto auto2 = new Auto("Renault", "81826", "2018", "2017", "si", "4");
         listAutos.add(auto2);
     }
 
@@ -162,10 +156,6 @@ public class AlquilarAutoViewController {
     private void limpiarCampos() {
         txf_tiempoReserva.clear();
         txf_detallesUso.clear();
-    }
-
-    private void determinarDisponibilidad() {
-    
     }
 
 }

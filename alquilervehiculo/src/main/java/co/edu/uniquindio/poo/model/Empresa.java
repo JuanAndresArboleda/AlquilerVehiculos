@@ -65,6 +65,151 @@ public class Empresa {
         return centinela;
     }
 
+    //Metodos Auto//
+    
+    public boolean agregarAuto(Auto auto) {
+        boolean centinela = false;
+        if (!verificarAuto(auto.getMatricula())) {
+            autos.add(auto);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean eliminarAuto(String matricula) {
+        boolean centinela = false;
+        for (Auto auto : autos) {
+            if (auto.getMatricula().equals(matricula)) {
+                autos.remove(auto);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean actualizarAuto(String matricula, Auto actualizado) {
+        boolean centinela = false;
+        for (Auto auto : autos) {
+            if (auto.getMatricula().equals(matricula)) {
+                auto.setMarca(actualizado.getMarca());
+                auto.setMatricula(actualizado.getMatricula());
+                auto.setModelo(actualizado.getModelo());
+                auto.setAñoFabricacion(actualizado.getAñoFabricacion());
+                auto.setCantidadPuertas(actualizado.getCantidadPuertas());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean verificarAuto(String matricula) {
+        boolean centinela = false;
+        for (Auto auto : autos) {
+            if (auto.getMatricula().equals(matricula)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    //Metodos Camioneta
+    public boolean agregarCamioneta(Camioneta camioneta) {
+        boolean centinela = false;
+        if (!verificarCamioneta(camioneta.getMatricula())) {
+            camionetas.add(camioneta);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean eliminarCamioneta(String matrcicula) {
+        boolean centinela = false;
+        for (Camioneta camioneta : camionetas) {
+            if (camioneta.getMatricula().equals(matrcicula)) {
+                camionetas.remove(camioneta);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean actualizarCamioneta(String matricula, Camioneta actualizada) {
+        boolean centinela = false;
+        for (Camioneta camioneta : camionetas) {
+            if (camioneta.getMarca().equals(matricula)) {
+                camioneta.setMarca(actualizada.getMarca());
+                camioneta.setMatricula(actualizada.getMatricula());
+                camioneta.setModelo(actualizada.getModelo());
+                camioneta.setAñoFabricacion(actualizada.getAñoFabricacion());
+                camioneta.setCapacidadCarga(actualizada.getCapacidadCarga());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean verificarCamioneta(String matricula) {
+        boolean centinela = false;
+        for (Camioneta camioneta : camionetas) {
+            if (camioneta.getMatricula().equals(matricula)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    //Metodos Motos
+    public boolean agregarMoto(Moto moto) {
+        boolean centinela = false;
+        if (!verificarMoto(moto.getMatricula())) {
+            motos.add(moto);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean eliminarMoto(String matrcicula) {
+        boolean centinela = false;
+        for (Moto moto : motos) {
+            if (moto.getMatricula().equals(matrcicula)) {
+                motos.remove(moto);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean actualizarMoto(String matricula, Moto actualizada) {
+        boolean centinela = false;
+        for (Moto moto : motos) {
+            if (moto.getMarca().equals(matricula)) {
+                moto.setMarca(actualizada.getMarca());
+                moto.setMatricula(actualizada.getMatricula());
+                moto.setModelo(actualizada.getModelo());
+                moto.setAñoFabricacion(actualizada.getAñoFabricacion());
+                moto.setCaja(actualizada.getCaja());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean verificarMoto(String matricula) {
+        boolean centinela = false;
+        for (Moto moto : motos) {
+            if (moto.getMatricula().equals(matricula)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -126,7 +271,6 @@ public class Empresa {
         return "Empresa [nombre=" + nombre + ", id=" + id + ", clientes=" + clientes + ", autos=" + autos
                 + ", reservas=" + reservas + ", camionetas=" + camionetas + ", motos=" + motos + "]";
     }
-
    
 
     

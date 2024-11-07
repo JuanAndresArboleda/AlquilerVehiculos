@@ -53,7 +53,7 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <TextField id="lbl_cedulaCl" fx:id="txf_cedula" layoutX="82.0" layoutY="220.0" onAction="#onCedula" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_cedulaCl" fx:id="txf_cedula" layoutX="82.0" layoutY="220.0" prefHeight="38.0" prefWidth="409.0" />
       <Text layoutX="41.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />
@@ -64,8 +64,8 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <TextField id="lbl_telefonoCl" fx:id="txf_telefono" layoutX="82.0" layoutY="295.0" onAction="#onTelefono" prefHeight="38.0" prefWidth="409.0" />
-      <TextField id="lbl_correoCl" fx:id="txf_correo" layoutX="82.0" layoutY="369.0" onAction="#onCorreo" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_telefonoCl" fx:id="txf_telefono" layoutX="82.0" layoutY="295.0" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_correoCl" fx:id="txf_correo" layoutX="82.0" layoutY="369.0" prefHeight="38.0" prefWidth="409.0" />
       <Text layoutX="35.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />

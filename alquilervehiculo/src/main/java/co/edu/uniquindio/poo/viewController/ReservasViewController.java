@@ -44,9 +44,6 @@ public class ReservasViewController {
     private Button btn_cancelarAlquiler;
 
     @FXML
-    private TableColumn<Reserva, String> tbc_vehiculo;
-
-    @FXML
     private Text txt_bienvenido;
 
     @FXML
@@ -60,9 +57,6 @@ public class ReservasViewController {
 
     @FXML
     private Text txt_nombreCliente;
-
-    @FXML
-    private TableColumn<Reserva, String> tbc_tipo;
 
     @FXML
     private Text txt_quedeseahacer;
